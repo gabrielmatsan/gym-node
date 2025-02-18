@@ -25,22 +25,30 @@ cd gym-node
 npm install
 ```
 
-### ** 3 Rode as migrações**
+### ** 3 Configure as variáveis de ambiente**
+Crie um arquivo chamado .env e coloque a url do banco e porta padrão da aplicação, como no .env.example
+
+### ** 4 Rode as migrações**
 ```sh
 npx drizzle-kit generate
 npx drizzle-kit migrate
 ```
 
-### ** 4 Coloque dados no banco de dados**
+### ** 5 Opcional(verificar a tabela do banco de dados)**
+```sh
+npx drizzle-kit studio
+```
+
+### ** 6 Coloque dados no banco de dados**
 ```sh
 npm run seed
 ```
-### ** 5 Rode o projeto**
+### ** 7 Rode o projeto**
 ```sh
 npm run dev
 ```
 
-### ** 6 Verifique a rota com a documentação**
+### ** 8 Verifique a rota com a documentação**
 http://localhost:3333/docs
 
 
