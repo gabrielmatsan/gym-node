@@ -16,10 +16,7 @@ Este é um projeto **Node.js** com **Fastify**, **Drizzle ORM** e **PostgreSQL**
 
 ## **⚡ Como Rodar o Projeto**
 ### ** 1 Clone o Repositório**
-```sh
-git clone https://github.com/seu-usuario/gym-node.git
-cd gym-node
-```
+
 ### ** 2 Instale as dependências**
 ```sh
 npm install
