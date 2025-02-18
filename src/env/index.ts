@@ -5,11 +5,6 @@ import { z } from 'zod'
 const envSchema = z.object({
   NODE_ENV: z.enum(['dev', 'test', 'production']).default('dev'), // Define o ambiente de execução
   PORT: z.coerce.number().default(3333), // Define a porta como número e com valor padrão
-  POSTGRES_USER: z.string(),
-  POSTGRES_HOST: z.string(),
-  POSTGRES_PASSWORD: z.string(),
-  POSTGRES_DB: z.string(),
-  POSTGRES_PORT: z.coerce.number().default(5432), // Porta do PostgreSQL com valor padrão
   DATABASE_URL: z.string().url(), // URL de conexão com o banco de dados
 })
 

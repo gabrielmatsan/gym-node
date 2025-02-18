@@ -50,7 +50,7 @@ app.register(getUserRoute)
 app.register(updateUserRoute)
 app.register(deleteUserRoute)
 
-app.listen({ port: env.PORT, host: '0.0.0.0' }).then(() => {
+app.listen({ port: env.PORT }).then(() => {
   console.log(`🚀 HTTP server running on http://localhost:${env.PORT}`)
   console.log('📄 Swagger disponível em http://localhost:3333/docs')
 })

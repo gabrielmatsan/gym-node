@@ -4,8 +4,8 @@ POST http://localhost:3333/users
 Content-Type: application/json
 
 {
-    "name": "John Doe",
-    "email": "johndoe@example.com",
+    "name": "Davi",
+    "email": "davi@example.com",
     "password": "123456"
 }
 
@@ -17,15 +17,15 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3333/users/1
+PUT http://localhost:3333/users/4
 Content-Type: application/json
 
 {
-    "fullName": "Nova Alice",
-    "email": "novoemail@example.com",
-    "password": "newpassword"
+    "fullName": "Marcela",
+    "email": "marcelo@e.com",
+    "password": "marcelopassword"
 }
 
 ###
 
-DELETE http://localhost:3333/users/1
+DELETE http://localhost:3333/users/4
