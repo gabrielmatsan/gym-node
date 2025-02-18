@@ -1,0 +1,17 @@
+version: '3.8'
+
+name: node-app-docker
+
+services:
+  pg:
+    image: bitnami/postgresql:13.16.0  # Corrigido para uma versão válida
+    ports:
+      - '5490:5432'
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=node-app
+      - PG_DATA=/data/postgresql 
+    volumes:
+      - ./docker:/docker-entrypoint-initdb.d
+      

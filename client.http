@@ -1,0 +1,31 @@
+// criando teste da rota
+
+POST http://localhost:3333/users
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "password": "123456"
+}
+
+###
+
+GET http://localhost:3333/users/1
+Content-Type: application/json
+
+
+###
+
+PUT http://localhost:3333/users/1
+Content-Type: application/json
+
+{
+    "fullName": "Nova Alice",
+    "email": "novoemail@example.com",
+    "password": "newpassword"
+}
+
+###
+
+DELETE http://localhost:3333/users/1
