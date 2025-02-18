@@ -25,17 +25,16 @@ app.setErrorHandler((error, request, reply) => {
     .send({ error: 'Erro interno no servidor', details: error.message })
 })
 
-// 📌 Configuração correta do Swagger (corrigida)
 app.register(fastifySwagger, {
-  mode: 'dynamic', // ✅ Garante que o schema seja gerado corretamente
+  mode: 'dynamic', 
   openapi: {
-    openapi: '3.1.0', // ✅ Versão OpenAPI correta
+    openapi: '3.1.0',
     info: {
       title: 'Fastify API',
       version: '1.0.0',
       description: 'API de exemplo com Fastify e Swagger',
     },
-    servers: [{ url: 'http://localhost:3333' }], // ✅ Define a URL base
+    servers: [{ url: 'http://localhost:3333' }],
   },
   transform: jsonSchemaTransform,
 })
@@ -44,7 +43,7 @@ app.register(fastifySwaggerUi, {
   routePrefix: '/docs',
 })
 
-// 📌 Registre as rotas corretamente
+// Registra as rotas corretamente
 app.register(createUserRoute)
 app.register(getUserRoute)
 app.register(updateUserRoute)

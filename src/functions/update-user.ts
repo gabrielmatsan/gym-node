@@ -5,7 +5,7 @@ import { UserNotFoundError } from '../errors/errors'
 
 interface UpdateUserRequest {
   id: number
-  name?: string // ✅ Alterado de fullName para name, compatível com o banco
+  name?: string 
   email?: string
   password?: string
 }
@@ -16,7 +16,7 @@ export async function updateUser({
   email,
   password,
 }: UpdateUserRequest) {
-  // 🔍 1️⃣ Verifica se o usuário existe antes de atualizar
+
   const existingUser = await db.select().from(users).where(eq(users.id, id))
 
   if (existingUser.length === 0) {

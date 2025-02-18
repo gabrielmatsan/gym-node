@@ -28,17 +28,15 @@ export const deleteUserRoute: FastifyPluginAsyncZod = async app => {
       try {
         const { id } = request.params
 
-        // ✅ 1️⃣ Converte `id` para número e valida
         const userId = Number(id)
         if (Number.isNaN(userId) || userId <= 0) {
           return reply.status(400).send({ error: 'ID inválido' })
         }
 
-        // ✅ 2️⃣ Aguarda a Promise resolver e deleta usuário
         await deleteUser({ id: userId })
 
         console.log(`✅ Usuário ${userId} deletado com sucesso`)
-        return reply.status(204).send() // ⚠️ Deve ser `null` para evitar erro
+        return reply.status(204).send()
       } catch (error) {
         if (error instanceof UserNotFoundError) {
           console.error(`❌ Usuário não encontrado: ID ${request.params.id}`)

@@ -12,7 +12,7 @@ export const updateUserRoute: FastifyPluginAsyncZod = async app => {
         summary: 'Atualiza um usuário',
         description: 'Endpoint para atualizar os dados de um usuário pelo ID.',
         params: z.object({
-          id: z.string().describe('ID do usuário'), // ⚠️ Fastify recebe `id` como string
+          id: z.string().describe('ID do usuário'), 
         }),
         body: z
           .object({
@@ -51,16 +51,14 @@ export const updateUserRoute: FastifyPluginAsyncZod = async app => {
         const { id } = request.params
         const { fullName, email, password } = request.body
 
-        // ✅ Converte `id` para número e valida
         const userId = Number(id)
         if (Number.isNaN(userId) || userId <= 0) {
           return reply.status(400).send({ error: 'ID inválido' })
         }
 
-        // ✅ Aguarda a Promise resolver e atualiza usuário
         const updatedUser = await updateUser({
           id: userId,
-          name: fullName, // ✅ Corrigido: Agora passamos `fullName` como `name`
+          name: fullName, 
           email,
           password,
         })
