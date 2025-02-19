@@ -14,9 +14,11 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/node": "^22.13.4",
+    "@vitest/coverage-v8": "^3.0.6",
     "drizzle-kit": "^0.30.4",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.6"
   },
   "dependencies": {
     "@fastify/swagger": "^9.4.2",
